@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GOW 누적 시계</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>GOW 10,000시간 누적 시계</h1>
+  
+  <canvas id="progressClock" width="300" height="300"></canvas>
+  <div id="stats">
+    <p>누적: <span id="totalHours">0.0</span>시간</p>
+    <p>남은: <span id="remainingHours">10000.0</span>시간</p>
+  </div>
+  
+  <div class="input-area">
+    <input type="number" id="studyHours" placeholder="시간" min="0" step="1" />
+    <input type="number" id="studyMinutes" placeholder="분" min="0" max="59" step="1" />
+    <button onclick="updateProgress()">업데이트</button>
+  </div>
+
+  <h2>하루별 기록</h2>
+  <ul id="dailyLog"></ul>
+
+  <h2>날짜별 차트</h2>
+  <canvas id="dailyChart" width="400" height="200"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
